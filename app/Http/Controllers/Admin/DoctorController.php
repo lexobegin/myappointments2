@@ -42,7 +42,7 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+        //dd($request->all());
         $rules = [
             'name' => 'required|min:3',
             'email' => 'required|email',
