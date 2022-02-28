@@ -909,7 +909,7 @@ var Charts = (function() {
 //
 // Orders chart
 //
-
+/*
 var OrdersChart = (function() {
 
 	//
@@ -962,10 +962,10 @@ var OrdersChart = (function() {
 				}
 			},
 			data: {
-				labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+				labels: ['Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom'],
 				datasets: [{
-					label: 'Sales',
-					data: [25, 20, 30, 22, 17, 29]
+					label: 'Citas Médicas',
+					data: [25, 20, 30, 22, 17, 29, 2]
 				}]
 			}
 		});
@@ -980,7 +980,7 @@ var OrdersChart = (function() {
 		initChart($chart);
 	}
 
-})();
+})();*/
 
 //
 // Charts
@@ -991,7 +991,7 @@ var OrdersChart = (function() {
 //
 // Sales chart
 //
-
+/*
 var SalesChart = (function() {
 
 	// Variables
@@ -1061,3 +1061,4 @@ var SalesChart = (function() {
 	}
 
 })();
+*/

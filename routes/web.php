@@ -30,7 +30,7 @@ Route::middleware(['auth', 'admin'])->namespace('Admin')->group(function () {
   Route::get('/charts/doctors/column/data', 'ChartController@doctorsJson');
 
   // FCM (Firebase Cloud Messaging)
-  /*Route::post('/fcm/send', 'FirebaseController@sendAll');*/
+  Route::post('/fcm/send', 'FirebaseController@sendAll');
 });
 
 Route::middleware(['auth', 'doctor'])->namespace('Doctor')->group(function () {
@@ -40,32 +40,28 @@ Route::middleware(['auth', 'doctor'])->namespace('Doctor')->group(function () {
 
 Route::middleware('auth')->group(function () {
 
-  Route::get('/appointments/create', 'AppointmentController@create');
-  Route::post('/appointments', 'AppointmentController@store');
-  Route::get('/appointments', 'AppointmentController@index');
-
-  Route::get('/appointments/{appointment}', 'AppointmentController@show');
-  Route::get('/appointments/{appointment}/cancel', 'AppointmentController@showCancelForm');
-  Route::post('/appointments/{appointment}/cancel', 'AppointmentController@postCancel');
-  Route::post('/appointments/{appointment}/confirm', 'AppointmentController@postConfirm');
-
-  //JSON
-  Route::get('/specialties/{specialty}/doctors', 'Api\SpecialtyController@doctors');
-  Route::post('/schedule/hours', 'Api\ScheduleController@hours');
-
-  /*Route::get('/profile', 'UserController@edit');
-  Route::post('/profile', 'UserController@update');
-
   Route::middleware('phone')->group(function () { 
     Route::get('/appointments/create', 'AppointmentController@create');
     Route::post('/appointments', 'AppointmentController@store');
   });
 
-  Route::get('/appointments', 'AppointmentController@index'); 
+  Route::get('/profile', 'UserController@edit');//edit muestra formulario de edicion
+  Route::post('/profile', 'UserController@update');//update se encarga de procesar el formulario de edit
+
+  Route::get('/appointments', 'AppointmentController@index');
   Route::get('/appointments/{appointment}', 'AppointmentController@show');
 
   Route::get('/appointments/{appointment}/cancel', 'AppointmentController@showCancelForm');
   Route::post('/appointments/{appointment}/cancel', 'AppointmentController@postCancel');
+  
+  Route::post('/appointments/{appointment}/confirm', 'AppointmentController@postConfirm');
 
-  Route::post('/appointments/{appointment}/confirm', 'AppointmentController@postConfirm');*/
+  //Route::get('/appointments/create', 'AppointmentController@create');
+  //Route::post('/appointments', 'AppointmentController@store');
+  
+  //JSON
+  Route::get('/specialties/{specialty}/doctors', 'Api\SpecialtyController@doctors');
+  Route::post('/schedule/hours', 'Api\ScheduleController@hours');
+
+
 });
